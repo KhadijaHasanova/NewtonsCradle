@@ -25,11 +25,11 @@ function setup() {
 	roof = new Roof(400,80,700,40);
 
 	//create the bobs
-	bob1 = new Bob(250,300,50);
-	bob2 = new Bob(300,300,50);
-	bob3 = new Bob(350,300,50);
-	bob4 = new Bob(400,300,50);
-	bob5 = new Bob(450,300,50);
+	bob1 = new Bob(250,300);
+	bob2 = new Bob(300,300);
+	bob3 = new Bob(350,300);
+	bob4 = new Bob(400,300);
+	bob5 = new Bob(450,300);
 
 	//create the ropes
 	rope1 = new Rope(bob1.body,roof.body,-200,0);
@@ -64,11 +64,11 @@ function draw() {
   rope5.display();
 
   drawSprites();
- 
+
 }
 
 function keyPressed() {
 	if(keyCode === 32) {
-		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-730,y:20})
+		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-0.5,y:0})
 	}
 }
