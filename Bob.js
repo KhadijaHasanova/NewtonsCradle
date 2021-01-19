@@ -1,26 +1,22 @@
 class Bob {
-  constructor(x,y,r,options){
-    var options={        
-      isStatic: false,
-      resitution: 0,
-      friction: 0,
-      density: 0.8 
-      }
+  constructor(x, y, r) {
+    var options = {
+      restitution: 1,
+      friction: 0
+    }
     this.r = r;
-    this.body = Bodies.circle(x,y,this.r,options);
+    this.body = Bodies.circle(x,y,50,options);
 
-    //add it to the world
-    World.add(world,this.body)
+    World.add(world, this.body);
   }
-    
-    
-  display(){
-    var bobpos = this.body.position;
+
+  display() {
+    var pos = this.body.position;
     push();
-    translate(bobpos.x,bobpos.y);
+    translate(pos.x, pos.y);
     fill("blue");
-    ellipseMode(RADIUS);
-    ellipse(0,0,this.r,this.r);
+    ellipseMode(CENTER);
+    ellipse(0,0,100);
     pop();
   }
 }
